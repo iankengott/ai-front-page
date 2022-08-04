@@ -11494,9 +11494,7 @@ video.bg-video {
 .white_h11{
   color: #F1F6F6
   text-align: center;
-  padding-top: 100px;
-  
-  
+  padding-top: 100px; 
 }
 .centerTeam{
   float: left;
@@ -11518,8 +11516,7 @@ video.bg-video {
 /* Style the buttons that are used to open the tab content */
 .tab{
   text-align: center;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 5px;
 }
 .tab button {
   background-color: inherit;
@@ -11554,21 +11551,16 @@ centerImage
   padding-top: 60px;
   text-align: center;
   color: #F1F6F6;
-  max-width: 1200px;
 }
 .DivCenter {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 5px solid #FFFF00;
-  padding: 10px;
+  margin: auto;
+  width: 60%;
 }
 .space{
   padding-bottom: 50px;
 }
 .white_h11{
-  color: #F1F6F6
+  color: #F1F6F6;
 }
 
 @font-face {
@@ -11576,7 +11568,7 @@ centerImage
   src: url(./fonts/Exo2.0-Medium.otf);
 }
 .main1{
-  height: 100vh;
+  height: 40vh;
   display: flex;
   float: left;
   width:25%;
@@ -11586,7 +11578,7 @@ centerImage
 }
 .main2{
   
-  height: 100vh;
+  height: 40vh;
   display: flex;
   float: left;
   width:25%;
@@ -11596,7 +11588,7 @@ centerImage
 }
 .main3{
   
-  height: 100vh;
+  height: 40vh;
   float: left;
   width:25%;
    
@@ -11607,7 +11599,7 @@ centerImage
 }
 .main4{
   
-  height: 100vh;
+  height: 40vh;
   display: flex;
   float: left;
   width:25%;
@@ -11619,31 +11611,31 @@ centerImage
 .main5{
  
   display: flex;
-  float: left;
-    width: 33.3%;
-  height: 10vh;
+  float: right;
+  padding-right:325px;
+  width: 33.3%;
+  height: 30vh;
   justify-content: center;
   align-items: center;
   background-color: #000000;
 }
 .main6{
   
-  
+  padding-left:325px;
   display: flex;
   float: left;
     width: 33.3%;
-  height: 10vh;
+  height: 30vh;
   justify-content: center;
   align-items: center;
   background-color: #000000;
 }
 .main7{
- 
-  
   display: flex;
   float: left;
+  
     width: 33.3%;
-  height: 10vh;
+  height: 30vh;
   justify-content: center;
   align-items: center;
   background-color: #000000;
@@ -11667,6 +11659,7 @@ centerImage
   position: relative;
   width: 100%;
   height: 100%;
+  
   transition: .6s;
   z-index: 99;
 }
@@ -11674,7 +11667,8 @@ centerImage
   transform: translateY(-60px);
 }
 .img img{
-  width: 100%;
+  height: 75%;
+  width: 75%;
   border-radius: 50%;
   box-shadow: 0 0 22px #3336;
   transition: .6s;
@@ -11692,13 +11686,18 @@ centerImage
   opacity: 1;
 }
 .caption h3{
-  font-family:Georgia;
+  font-family: Oswald, sans-serif;
   font-weight:bold;
   top:-20px;
 }
+.caption p2{
+  font-size: 16px;
+  font-weight:bold;
+  color: #f1c50e;
+  margin: 2px 0 9px 0;
+}
 .caption p{
   font-size: 14px;
-  line-height:1;
   color: #0c52a1;
   margin: 2px 0 9px 0;
   

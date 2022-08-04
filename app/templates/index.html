@@ -35,32 +35,45 @@
                     <!-- To make this form functional, sign up at-->
                     <!-- https://startbootstrap.com/solution/contact-forms-->
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- phone address input-->
+                 
+                   
+
+<!--                      <form name=phone_number method=post enctype=multipart/form-data style="width:30%" >
+                      <input type="tel" id="phone" name="phone" placeholder="enter phone number" required><br><br>
+                      <small>Format: xxx-xxx-xxx</small><br><br>
+                      <input type="submit">
+                    </form> -->
+<!--                     <label for="phone">Enter your phone number:</label>
+                    <form>
+                      <h1></h1>
+                        <input type="tel" id="phone" name="phone"
+                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                           required> -->
+                    <form id="contactForm" method=post>
+                        <!-- Email address input-->
                         <div class="row input-group-newsletter">
-                            <div class="col"><input class="form-control" id="phone_number" type="tel" placeholder="Enter phone number..." aria-label="Enter phone number..." data-sb-validations="required,phone number" /></div>
-                            <div class="col-auto"><button class="vbtn btn-primary disabled" id="submitButton" type="submit">SUBMIT!</button></div>
+                            <div class="col"><input class="form-control" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" onchange="this.form.submit();"/></div>
+                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
                         </div>
-                        <div class="invalid-feedback mt-2" data-sb-feedback="email:required">A phone number is required.</div>
-                        <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Phone number is not valid.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
                         <!-- Submit success message-->
                         <!---->
                         <!-- This is what your users will see when the form-->
                         <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
+<!--                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3 mt-2">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                To activate this form, sign up at
-                                <br />
-                                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Submit error message-->
                         <!---->
                         <!-- This is what your users will see when there is-->
                         <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+<!--                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div> -->
                     </form>
+                    
+                 
                 </div>
             </div>
         </div>
@@ -85,17 +98,16 @@
       
   </body>
   
-  <body style="background-color: black;">
+  <body style="background-color: black;" >
             
-            <div align='center'>
+            <div align='center'    style='padding-bottom:10%'>
               <h1 class="white_h11">Upload a file for predictions</h1>
               
-                      <form name=file method=post enctype=multipart/form-data>
+                      <form name=file method=post enctype=multipart/form-data style="width:30%" >
                         <div class="col">
                           <input class="form-control" id="file" type="file" name='file' onchange="this.form.submit();"/>
                         </div><div style='text-align:center'></div>
                       </form>
-             
             </div>
             <div class="col justify-content-center align-items-center text-center">
                     <h3 class="section-title display-4" style="color:white;">Recognition Results</h3>
@@ -110,9 +122,10 @@
                 </div>
                 <div align = 'center' class="col">
                     <img align='center' class="mbr-figure" src="{{ url_for('static', filename='uploads/' + filename)}}" width=50% height=50%>
+                  
                 </div>
     
-    <div align='center'class='main video holder'>
+<!--     <div align='center'class='main video holder'>
       <div class='video-holder'>
           <img src="{{ '/video_feed_george_washington_bridge' }}" width="300" height="400">
       </div>
@@ -120,13 +133,20 @@
       <div class='video-holder'>
         <img src="{{ '/video_feed_jackson_hole' }}" width="300" height="400">
       </div>
-    </div>
+    </div> -->
             <h1 class="white_h11">About Us</h1>
+            <div class="DivCenter">
             <p class="white_h1">
               Annually 1.35 million people fall victim to fatal car accidents, one of the leading reasons behind the high mortality rate of car crashes is the time it takes for an ambulance to be dispatched and stabalize the patient. The difference between 7 and 12 minutes can make as much as a ~45% difference in mortality rate. One of the best methods to increase car crash survivability would be to reduce ambulance dispatch time. Through meticulous hours of processing over 18 thousand images and weeks of work cumulated we have arrived at (name). (Name) uses Yolov5, an object detection AI in order to accurately spot vehicles that have been posed in both minor accidents and mortal danger in real time utilizing street cam footage and is capable of forwarding it to the correct outlets to hasten ambulance response times to make the difference.
     </p>
+    </div>
     
    <!-- Tab links -->
+<div class=white_h1 id=tab_title>
+  <h1>
+    More
+  </h1>
+</div>
 <div class="tab">
   <button class="tablinks" onclick="openAI(event, 'confusion matrix')">Confusion Matrix</button>
   <button class="tablinks" onclick="openAI(event, 'how it works')">How it Works</button>
@@ -135,7 +155,7 @@
 </div>
 
 <!-- Tab content -->
-<div id="confusion matrix" class="tabcontent"> 
+<div id="confusion matrix" class="tabcontent" > 
   <h1 class="white_h11">Confusion Matrix</h1>
   <div class="DivCenter">
   <p class="white_h1">For an AI its critical that it remains accurate across several environments and is capable of handling different scenarios both in and out of our dataset. A confusion matrix lets us monitor our accuracy based solely upon the images we fed into our dataset. Our confusion matrix below displays our AI's accuracy, a higher percentage of corresponding classes exhibits characteristics of an accurate AI based off of the validation and test sets fed into it</p>
@@ -146,27 +166,32 @@
 
 <div id="how it works" class="tabcontent">
   <h1 class="white_h11">How It Works</h1>
+  <div class="DivCenter">
   <p class="white_h1">
     Our AI utilizes yolov5 an AI object recognition model in order to facilitate operations and was trained on 2 separate models for crash and vehicle detection, the first model comprising of a collection of crashes with differing levels of severity in a dataset of over ~1400 images, and the second utilizing ~13,000 images to complete its dataset and consisting of cars/motorcycles for vehicle recognition. In order to iron out some flaws inside of our AI we had trained it on several different occasions on both local and cloud runtimes with enough epochs that it had stopped itself. With such a constitution (name) can perform as optimally as possible.
-  </p>  
+  </p>
+  </div>  
 </div>
 
 <div id="real world intergration" class="tabcontent">
   <h1 class="white_h11">Real world intergration</h1>
-  <p
-     class ='white_h1'>
-    hello_world
+  <div class="DivCenter">
+  <p class ='white_h1'>
+    In a setting where minutes matter, car crashes need to be responded to as quickly as possible. The amount of time it takes for a crash to be reported and an ambulance to be dispatched can take as little as a few seconds North to 10 minutes, the major determining factor being whether you live inside of an urban or rural area. Traffic cameras are stationed all across the United States both urban and rural, with the application of AI we hold the potential to dramatically reduce the staggering 1.35 million annual casualties to car crashes.
+
   </p>
-     
-  /p>
+  </div>
 </div>
 
 <div id="issues we ran into" class="tabcontent">
   <h1 class="white_h11">Issues We Ran Into</h1>
-  <p class="white_h1">
+  <div class="DivCenter">
+    <p class="white_h1">
     Everything :(
-  </p>
-    </div>
+    </p>
+  </div>
+</div>
+    
 <script>
 //OpenCity(event, cityName)
 function openAI(evt, descr) {
@@ -189,26 +214,29 @@ function openAI(evt, descr) {
   document.getElementById(descr).style.display = "block";
   evt.currentTarget.className += " active";
 }</script>
+    
+  <div>
+     <h1 class="white_h1">The Team</h1>
+  </div>
+   
+    
   </body>
 
 <div style='text-align:center'>
 
-  <div class="main2">
+  <div class="main1">
         <div align='center' class="profile-card">
           <label>
             <input type="checkbox"/>
              <div align='center'  class="flip-card">
               <div class="front">
                       <div class="img">
-                        <img src="{{url_for('static', filename='assets/Chris-Pratt.avif')}}">
+                        <img src="{{url_for('static', filename='assets/TheTeam_Moses.jpg')}}">
                     </div>
                   <div class="caption">
-                      <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <h3>Moses Moses</h3>
+                      <p2>High school student & product developer</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -232,15 +260,12 @@ function openAI(evt, descr) {
              <div align='center'  class="flip-card">
               <div class="front">
                       <div class="img">
-                        <img src="{{url_for('static', filename='assets/Chris-Pratt.avif')}}">
+                        <img src="{{url_for('static', filename='assets/OliverBuch.jpg')}}">
                     </div>
                   <div class="caption">
-                      <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <h3>Oliver Buch</h3>
+                      <p2>Senior Citizen</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -264,15 +289,12 @@ function openAI(evt, descr) {
              <div align='center'  class="flip-card">
               <div class="front">
                       <div class="img">
-                        <img src="{{url_for('static', filename='assets/Chris-Pratt.avif')}}">
+                        <img src="{{url_for('static', filename='assets/f68b30af76652068e2d587fe6ed07f2.jpg')}}">
                     </div>
                   <div class="caption">
-                      <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <h3>Zachary Wei</h3>
+                      <p2>Senior App Developer</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -296,15 +318,12 @@ function openAI(evt, descr) {
              <div align='center'  class="flip-card">
               <div class="front">
                       <div class="img">
-                        <img src="{{url_for('static', filename='assets/Chris-Pratt.avif')}}">
+                        <img src="{{url_for('static', filename='assets/ian_kengott.jpg')}}">
                     </div>
                   <div class="caption">
-                      <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <h3>Ian kengott</h3>
+                      <p2>Senior App Developer</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -328,15 +347,12 @@ function openAI(evt, descr) {
              <div align='center'  class="flip-card">
               <div class="front">
                       <div class="img">
-                        <img src="{{url_for('static', filename='assets/Chris-Pratt.avif')}}">
+                        <img src="{{url_for('static', filename='assets/nathan3.PNG')}}">
                     </div>
                   <div class="caption">
-                      <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <h3>Nathan Reilly</h3>
+                      <p2>Senior App Developer</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -344,7 +360,7 @@ function openAI(evt, descr) {
               <div class="back">
                       <h1>About me</h1>
                       <hr />
-                      <p>Chris Pratt is an actor</p>
+                      <p>Nathan Reill is an actory</p>
                       <hr />
                       <p class="click"> Click to flip
                       </p>
@@ -364,11 +380,8 @@ function openAI(evt, descr) {
                     </div>
                   <div class="caption">
                       <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <p2>Senior App Developer</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -392,15 +405,12 @@ function openAI(evt, descr) {
              <div align='center' class="flip-card">
               <div class="front">
                       <div class="img">
-                        <img src="{{url_for('static', filename='assets/Chris-Pratt.avif')}}">
+                        <img src="{{url_for('static', filename='assets/nadine.jpg')}}">
                     </div>
                   <div class="caption">
-                      <h3>Chris Pratt</h3>
-                      <p>Senior App Developer</p>
+                      <h3>Nadine Vargas</h3>
+                      <p2>Senior App Developer</p2>
                       <div class="social-links">
-                          <a href="#"><i class="fab fa-facebook"></i></a>
-                          <a href="#"><i class="fab fa-instagram"></i></a>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
                           <p>Click to flip</p>
               </div>
                     </div>
@@ -408,7 +418,7 @@ function openAI(evt, descr) {
               <div class="back">
                       <h1>About me</h1>
                       <hr />
-                      <p>Chris Pratt is an actor</p>
+                      <p>Nadine Vargas is an actor</p>
                       <hr />
                       <p class="click"> Click to flip
                       </p>

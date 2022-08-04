@@ -16,7 +16,7 @@ random.seed(42)
 
 # setup the webserver
 # port may need to be changed if there are multiple flask servers running on same server
-port = 12345
+port = 12346
 base_url = get_base_url(port)
 
 # 'Derry NH USA':cv2.VideoCapture(pafy.new('https://www.youtube.com/watch?v=FBwVLC_R_r8').allstreams[2].url_https)
@@ -71,12 +71,15 @@ def home():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-
+        
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('uploaded_file',
                                     filename=filename))
+    
+            
+            
 
     return render_template("index.html", confidences=None, labels=None,
                         old_filename='place_holder.jpg',
