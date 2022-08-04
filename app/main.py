@@ -126,10 +126,10 @@ def uploaded_file(filename):
                     format_confidences.append(str(round(percent*100)) + '%')
                 
 
-
+                print(label[0], format_confidences)
 
                 cv2.rectangle(ret_image, (xmin, ymin), (xmax, ymax),color=(255,0,0),thickness=2)
-                cv2.putText(ret_image, str(label[0]), (xmin, ymin-10), cv2.FONT_HERSHEY_SIMPLEX, 3, (36,255,12), thickness=2)
+                cv2.putText(ret_image, str(label[0] ), (xmin+10, ymin+10), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (36,255,12), thickness=2)
             
         else:
             # return the 
@@ -142,6 +142,7 @@ def uploaded_file(filename):
         # https://stackoverflow.com/questions/56108183/python-opencv-cv2-drawing-rectangle-with-tex
 
     format_confidences = and_syntax(format_confidences)
+    
     save_path = os.path.join(here,  app.config['UPLOAD_FOLDER'], str(filename[:-4] + "_annotated.jpg"))
     
     cv2.imwrite(save_path, ret_image)
@@ -209,11 +210,13 @@ def target_function(video):
                     label = list(i[0]['name'])
                     label_for_return.append(str(label[0]))
                     confidences = str(round(list(i[0]['confidence'])[0]) * 100) + '%'
+                    print(str(label[0] + confidences))
                     # for percent in confidences:
                     #     format_confidences.append(str(round(percent*100)) + '%')
                     print("Displaying predictions")
                     cv2.rectangle(ret_image, (xmin, ymin), (xmax, ymax),color=(255,0,0))
-                    cv2.putText(ret_image, str(label[0] + confidences), (xmin, ymin-10), cv2.FONT_HERSHEY_SIMPLEX, .3, (36,255,12), 1)
+                    # alter the text to fit within the bounding box
+                    cv2.putText(ret_image, str(label[0] + confidences), (xmin+10, ymin+10), cv2.FONT_HERSHEY_SIMPLEX, .3, (36,255,12), 1)
             else:
                 pass
 

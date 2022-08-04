@@ -18,7 +18,6 @@
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
-  --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
@@ -492,6 +491,7 @@ progress {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
+  color: #F1F6F6;
 }
 
 .display-1 {
@@ -11486,6 +11486,17 @@ video.bg-video {
 }
 .white_h1{
     color: white;
+    text-align: center;
+}
+.space{
+  padding-bottom: 100px;
+}
+.white_h11{
+  color: #F1F6F6
+  text-align: center;
+  padding-top: 100px;
+  
+  
 }
 .centerTeam{
   float: left;
@@ -11525,7 +11536,7 @@ video.bg-video {
 .tab button:hover {
   background-color: #ddd;
 }
-
+centerImage
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
@@ -11535,112 +11546,114 @@ video.bg-video {
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
   border-top: none;
-  color: #F1F6F6;
-}
-.white_h1{
-  padding-top: 100px;
+  color: #000000;
   text-align: center;
 }
+.white_h1{
+  padding-top: 60px;
+  text-align: center;
+  color: #F1F6F6;
+  max-width: 1200px;
+}
+.DivCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #FFFF00;
+  padding: 10px;
+}
 .space{
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 .white_h11{
   color: #F1F6F6
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Exo;
-}
+
 @font-face {
   font-family: Exo;
   src: url(./fonts/Exo2.0-Medium.otf);
 }
 .main1{
-  
   height: 100vh;
-  display: inline-block;
-  
+  display: flex;
   float: left;
-  width: 25vw;
+  width:25%;
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 }
 .main2{
   
   height: 100vh;
   display: flex;
   float: left;
-  width: 25vw;
+  width:25%;
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 }
 .main3{
   
   height: 100vh;
   float: left;
-  width: 25vw;
+  width:25%;
    
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 }
 .main4{
   
   height: 100vh;
   display: flex;
   float: left;
-  width: 25vw;
+  width:25%;
     
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 }
 .main5{
-  width: 25vw;
-  height: 100vh;
+ 
   display: flex;
   float: left;
-  
- 
+    width: 33.3%;
+  height: 10vh;
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 }
 .main6{
-  width: 25vw;
-  height: 100vh;
+  
+  
   display: flex;
   float: left;
-/*     width: 33.3%; */
-  
+    width: 33.3%;
+  height: 10vh;
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 }
 .main7{
-  width: 25vw;
-  height: 100vh;
+ 
+  
   display: flex;
   float: left;
-/*     width: 33.3%; */
-  
+    width: 33.3%;
+  height: 10vh;
   justify-content: center;
   align-items: center;
-  background-color: #0c52a1;
+  background-color: #000000;
 
 }
 .profile-card{
   position: relative;
-  width: 70%;
-  height: 50%;
-  background: #0c52a1;
+  width: 220px;
+  height: 50px;
+  background: #000000;
   padding: 30px;
   border-radius: 50%;
   transition: .6s;
@@ -11679,11 +11692,13 @@ video.bg-video {
   opacity: 1;
 }
 .caption h3{
-  font-family:"Times New Roman", Times, serif; font-size: 25px;
+  font-family:Georgia;
+  font-weight:bold;
   top:-20px;
 }
 .caption p{
-  font-size: 15px;
+  font-size: 14px;
+  line-height:1;
   color: #0c52a1;
   margin: 2px 0 9px 0;
   
@@ -11717,8 +11732,8 @@ label {
 
 .flip-card {
     position: relative;
-    width: 70%;
-    height: 50;
+    width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
     z-index: 1;
@@ -11727,8 +11742,8 @@ label {
 .flip-card .front,
 .flip-card .back {
     position: absolute;
-    width: 70%;
-    height: 50;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     text-align: center;
     background: #fff;

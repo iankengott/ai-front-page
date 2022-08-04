@@ -12,10 +12,11 @@
         <!-- Google fonts-->
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />  
+<!--         <link href="css/styles.css" rel="stylesheet" /> -->
         <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
-    </head>
+    
+        
     <body>
          <!-- Background Video--> <!-- Masthead-->
       
@@ -97,9 +98,9 @@
              
             </div>
             <div class="col justify-content-center align-items-center text-center">
-                    <h3 class="section-title display-4">Recognition Results</h3>
-                    <h3 class="we-found btn-text display-4">We found <strong><span style='text-transform: capitalize;'>{{labels}}!</span></strong></h3>
-
+                    <h3 class="section-title display-4" style="color:white;">Recognition Results</h3>
+                    <h3 class="we-found btn-text display-4" style="color:white;">We found <strong><span style='text-transform: capitalize;'>{{labels}}!</span></strong></h3>
+                    
                     {% if labels == 'No cars or accidents' %}
                     <div class='lead'>We missed? See why below.</div>
                     {% else %}
@@ -111,16 +112,20 @@
                     <img align='center' class="mbr-figure" src="{{ url_for('static', filename='uploads/' + filename)}}" width=50% height=50%>
                 </div>
     
-    
+    <div align='center'class='main video holder'>
+      <div class='video-holder'>
+          <img src="{{ '/video_feed_george_washington_bridge' }}" width="300" height="400">
+      </div>
+        
+      <div class='video-holder'>
+        <img src="{{ '/video_feed_jackson_hole' }}" width="300" height="400">
+      </div>
+    </div>
             <h1 class="white_h11">About Us</h1>
             <p class="white_h1">
               Annually 1.35 million people fall victim to fatal car accidents, one of the leading reasons behind the high mortality rate of car crashes is the time it takes for an ambulance to be dispatched and stabalize the patient. The difference between 7 and 12 minutes can make as much as a ~45% difference in mortality rate. One of the best methods to increase car crash survivability would be to reduce ambulance dispatch time. Through meticulous hours of processing over 18 thousand images and weeks of work cumulated we have arrived at (name). (Name) uses Yolov5, an object detection AI in order to accurately spot vehicles that have been posed in both minor accidents and mortal danger in real time utilizing street cam footage and is capable of forwarding it to the correct outlets to hasten ambulance response times to make the difference.
     </p>
-  </body>
- 
-  
-  
-  <body>
+    
    <!-- Tab links -->
 <div class="tab">
   <button class="tablinks" onclick="openAI(event, 'confusion matrix')">Confusion Matrix</button>
@@ -130,9 +135,12 @@
 </div>
 
 <!-- Tab content -->
-<div id="confusion matrix" class="tabcontent">
+<div id="confusion matrix" class="tabcontent"> 
   <h1 class="white_h11">Confusion Matrix</h1>
-  <p class="white_h1">Our confusion matrix below displays our AI's accuracy, a higher percentage of corresponding classes exhibits characteristics of an accurate AI based off of the validation and test sets fed into it</p>
+  <div class="DivCenter">
+  <p class="white_h1">For an AI its critical that it remains accurate across several environments and is capable of handling different scenarios both in and out of our dataset. A confusion matrix lets us monitor our accuracy based solely upon the images we fed into our dataset. Our confusion matrix below displays our AI's accuracy, a higher percentage of corresponding classes exhibits characteristics of an accurate AI based off of the validation and test sets fed into it</p>
+  </div>
+  <p class="space"></p>
   <img src="{{url_for('static', filename='assets/confusion_matrix_(10).png')}}" alt="confusion matrix"  style="width:416px;height:416px;" class="centerImage">
 </div>
 
@@ -144,8 +152,13 @@
 </div>
 
 <div id="real world intergration" class="tabcontent">
-  <h3>Real World Integration</h3>
-  <p>###PLACEHOLDER###</p>
+  <h1 class="white_h11">Real world intergration</h1>
+  <p
+     class ='white_h1'>
+    hello_world
+  </p>
+     
+  /p>
 </div>
 
 <div id="issues we ran into" class="tabcontent">
@@ -178,7 +191,7 @@ function openAI(evt, descr) {
 }</script>
   </body>
 
-<div>
+<div style='text-align:center'>
 
   <div class="main2">
         <div align='center' class="profile-card">
